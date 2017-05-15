@@ -1,4 +1,16 @@
 @extends('layouts.app')
+@section('directive')
+<div class="head-text">
+    <img class="img-responsive main-logo-img" src="{{asset('images/main-logo.gif')}}" />
+    <h1>Welcome to BBEAU.CA.</h1>
+    <h2>Make it work beautifully.</h2>
+    <p>Get Bryn to class up your website</a>
+        <br />
+        or develop tools that make your work easier. </p>
+        </div>
+    </div>
+</div>
+@endsection
 @section('content')
      <!--[if lte IE 8]><script src="{{asset('js/ie/html5shiv.js')}}"></script><![endif]-->
     <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
@@ -8,7 +20,7 @@
             <div id="main">
 
                 <header class="major container 75%">
-                    <h2>We conduct experiments that
+                    <h2>I conduct experiments that
                         <br />
                         may or may not seriously
                         <br />
@@ -202,4 +214,3 @@
 
             </div>
 @endsection
-
