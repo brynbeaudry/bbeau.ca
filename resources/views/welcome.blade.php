@@ -3,7 +3,7 @@
 <div class="head-text">
     <img class="img-responsive main-logo-img" src="{{asset('images/main-logo.gif')}}" />
     <h1>Welcome to BBEAU.CA.</h1>
-    <h2>Make it work beautifully.</h2>
+    <h2>Show your work, beautifully.</h2>
     <p>Get Bryn to class up your website</a>
         <br />
         or develop tools that make your work easier. </p>
