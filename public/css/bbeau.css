@@ -1,0 +1,34 @@
+#app > nav {
+    backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+#app-navbar-collapse > ul.nav.navbar-nav.navbar-right a{
+    color : black;
+}
+
+div.head-text{
+
+    padding-top: 5em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 10em;
+
+}
+
+.nav-bar-icon{
+  padding-top: .2em;
+  padding-bottom: .2em;
+}
+
+.main-logo-img{
+  text-align: center;
+  margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+#header > nav {
+    background-color: rgba(0, 0, 0, 0.2);
+}
