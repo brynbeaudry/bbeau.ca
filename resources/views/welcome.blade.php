@@ -20,11 +20,11 @@
             <div id="main">
 
                 <header class="major container 75%">
-                    <h2>I conduct experiments that
-                        <br />
-                        may or may not seriously
-                        <br />
-                        break the universe</h2>
+                  <h2>Bryn's Guthub Activity</h2>
+                  <br>
+                  <img class="img-responsive" src="http://ghchart.rshah.org/brynbeaudry" alt="Bryn's Github chart" />
+                  <br>
+                    <h4>Bryn is conducting lots of experiments recently.</h4>
                     <!--
                     <p>Tellus erat mauris ipsum fermentum<br />
                     etiam vivamus nunc nibh morbi.</p>

@@ -7,6 +7,7 @@ use App\Clients;
 use App\ProjectImage;
 use App\ProjectTechnology;
 use App\ProjectVideo;
+use App\Technology;
 
 class Project extends Model
 {
@@ -32,6 +33,11 @@ class Project extends Model
     public function client()
     {
         return $this->hasOne('App\Client');
+    }
+
+    /*get the related technologies*/
+    public function technologies(){
+      $this->hasManyThrough('App\Technologies', 'App\ProjectTechnology');
     }
 
 }
