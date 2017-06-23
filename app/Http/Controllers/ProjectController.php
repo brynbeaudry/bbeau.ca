@@ -44,9 +44,16 @@ class ProjectController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show($id)
     {
+        $project = Project::findOrFail($id);
+        $images = $project->images();
+        $technologies = $project->technologies();
+        shuffle($technologies);
+
         //
+        //dd($images);
+        return view('project', ['project' => $project, 'images'=> $images, 'technologies'=> $technologies]);
     }
 
     /**
@@ -57,7 +64,6 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
     }
 
     /**

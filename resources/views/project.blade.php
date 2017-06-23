@@ -1,16 +1,9 @@
 @extends('layouts.app')
 @section('directive')
-<div class="head-text">
-    <img class="img-responsive main-logo-img" src="{{asset('images/main-logo.gif')}}" />
-    <h1>Welcome to BBEAU.CA</h1>
-    <h2>Show your work,<br>beautifully</h2>
-    <!--
-    <p>Get Bryn to class up your website</a>
-        <br />
-        or develop tools that make your work easier. </p>
-         -->
-        </div>
+<div class="head-text" style="margin-bottom : 0px;">
+    <h1 style="font-size: 3em; ">{{$project['title']}}</h1>
     </div>
+  </div>
 </div>
 @endsection
 @section('scripts')
@@ -30,6 +23,13 @@
     vertical-align:middle;
   }
 
+  h1 {
+   color: black;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #422a04;
+}
+
   @media screen and (max-width: 1680px){
 
     #main * .row > * {
@@ -39,50 +39,56 @@
 </style>
 @endsection
 @section('content')
+     <!--[if lte IE 8]><script src="{{asset('js/ie/html5shiv.js')}}"></script><![endif]-->
+    <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('/css/ie8.css')}}" /><![endif]-->
+    <link href="{{asset('css/bbeau.css') }}" rel="stylesheet"/>
             <!-- Main -->
             <div id="main">
 
                 <header class="major container 75%" style="margin-bottom: 0px;">
-                  <h2>Bryn's Guthub Activity</h2>
-                  <br>
-                  <img class="img-responsive" src="http://ghchart.rshah.org/brynbeaudry" alt="Bryn's Github chart" />
-                  <br>
-                    <h4>Bryn has been conducting lots of experiments recently.</h4>
-                    <!--
-                    <p>Tellus erat mauris ipsum fermentum<br />
-                    etiam vivamus nunc nibh morbi.</p>
-                    -->
+                    <h4>{{$project['tagline']}}</h4>
+                    @if($project['url'] != "NULL")
+                    <h5>{{$project['url']}}</h5>
+                    <h7>Click an image below to goto the site</h5>
+                    @endif
                 </header>
-                <header class="major container 75%" style="margin-bottom: 0px;">
-                  <h2>Projects</h2>
-                  <h4>Click a project image to learn more</h4>
-                </header>
+                <div class="box container" style="margin-bottom: 0px;">
+                <div class="content">
+                  <p><i>"{{$project['desc']}}"</i></p>
+                </div>
+              </div>
                 <!--alternate between feature left and feature right -->
-                @if(isset($projects) && count($projects) > 0)
-                @foreach($projects as $key => $project)
-                <div class="box alt container" style="margin-bottom: 0px;">
+                @if(isset($images) && count($images) > 0)
+                @foreach($images as $key => $image)
+                <div class="box alt container" style="margin-bottom : 0px;">
                     @if($key%2==0)
                     <section class="feature left">
                     @else
                     <section class="feature right">
                     @endif
-                        <a href="/projects/{{$project['id']}}" class="image thumbnail"><img src="{{$project['img']}}" style="" alt="" /></a>
+                    @if($project['url'] != "NULL")
+                      <a href="{{$project['url']}}" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
+                    @else
+                      <a href="" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
+                    @endif
                         <div class="content">
-                            <h3>{{$project['title']}}</h3>
+                            <!--<h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>
                             @if($project['url'] != "NULL")
                             <h5>{{$project['url']}}</h5>
-                            @endif
-                            <p>{{substr($project['desc'], 0 ,150) . '...'}}</p>
+                            @endif -->
+                            <p>{{$image['desc']}}</p>
                         </div>
                     </section>
                   </div>
                   @endforeach
                   @endif
+                  <!--Technologies for the project -->
                   <div class="box container" style="margin-bottom : 0px;">
                     <header>
                       <h2>Technologies used</h2>
-                      <h4><small>Over all of the projects combined</small></h4>
+                      <h4><small>For this project</small></h4>
           					</header>
                     <section>
                       <p class="text-center">Click an image to learn more</p>
@@ -99,8 +105,8 @@
                           <div class="col-md-3 col-xs-12">
                           @endif
                             <div class="wrapper">
-                              <h4 class="hidden-xs">{{ $tech['name'] }}</h4>
-                              <a href="{{$tech['url']}}"><img src="{{$tech['img']}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                              <h4 class="hidden-xs">{{ $tech->name }}</h4>
+                              <a href="{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
                               <!--style="width: 200px height: 200px" -->
                             </div>
                           </div>
@@ -111,24 +117,6 @@
                     </section>
                   </div>
 
-
-
-                  <!--  <section class="feature right">
-                        <div class="content">
-                        <a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
-                            <h3>The Second Thing</h3>
-                            <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
-                        </div>
-                    </section>
-                    <section class="feature left">
-                        <a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
-                        <div class="content">
-                            <h3>The Third Thing</h3>
-                            <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
-                        </div>
-                    </section>
-                </div>
-                 -->
 
             <!--
 				<div class="box container">
@@ -278,14 +266,6 @@
 					</section>
 				</div>
 				-->
-<!--
-                <footer class="major container 75%">
-                    <h3>Get shady with science</h3>
-                    <p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus.</p>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Join our crew</a></li>
-                    </ul>
-                </footer>
--->
+
             </div>
 @endsection

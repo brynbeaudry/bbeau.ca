@@ -8,4 +8,5 @@ class ProjectTechnology extends Model
 {
     //
     public $timestamps = false;
+    protected $table = 'product_technology';
 }

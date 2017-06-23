@@ -13,8 +13,9 @@
     <!-- Styles -->
 
     <link href="{{asset('css/app.css') }}" rel="stylesheet"/>
-    <link href="{{asset('css/bbeau.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('css/main.css')}}" />
+    <link href="{{asset('css/bbeau.css') }}" rel="stylesheet"/>
+    @yield('styles')
 
 
     <!-- Scripts -->
@@ -58,10 +59,10 @@
                         @if (Auth::guest())
                             <!--<li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><a href="{{ route('login') }}">Facebook</a></li>
-                            <li><a href="{{ route('register') }}">LinkedIn</a></li>
-                            <li><a href="{{ route('login') }}">Resume</a></li>
-                            <li><a href="{{ route('register') }}">Contact</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                            <li><a href="#">Resume</a></li>
+                            <li><a href="#">Contact</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -89,7 +90,7 @@
         </nav>
         @yield('directive')
 
-        
+
 
 
         @yield('content')
@@ -97,7 +98,7 @@
     <!-- Footer -->
     <div id="footer">
         <div class="container 75%">
-
+<!--
             <header class="major last">
                 <h2>Questions or comments?</h2>
             </header>
@@ -135,9 +136,9 @@
                 <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
                 <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
             </ul>
-
+-->
             <ul class="copyright">
-                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <li>&copy; Bryn Beaudry 2017. All rights reserved.</li><li>Design: <a href="http://bbeau.ca">Bryn Beaudry</a></li>
             </ul>
 
         </div>
@@ -150,5 +151,6 @@
     <script src="{{ asset('/js/util.js')}}"></script>
     <!--[if lte IE 8]><script src="{{ asset('/js/ie/respond.min.js')}}"></script><![endif]-->
     <script src="{{ asset('/js/main.js')}}"></script>
+    @yield('scripts')
 </body>
 </html>
