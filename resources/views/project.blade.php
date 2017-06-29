@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('directive')
 <div class="head-text" style="margin-bottom : 0px;">
-    <h1 style="font-size: 3em; ">{{$project['title']}}</h1>
+    <h1 style="">{{$project['title']}}</h1>
     </div>
   </div>
 </div>
@@ -35,6 +35,20 @@
     #main * .row > * {
         padding-left: 0px;
     }
+    #header > div > h1 {
+      font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 767px){
+
+  #main * .row > * {
+      padding-left: 0px;
+  }
+
+  #header > div > h1 {
+    font-size: 2em;
+  }
 }
 </style>
 @endsection

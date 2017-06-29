@@ -3,7 +3,7 @@
 <div class="head-text">
     <img class="img-responsive main-logo-img" src="{{asset('images/main-logo.gif')}}" />
     <h1>Welcome to BBEAU.CA</h1>
-    <h2>Show your work,<br>beautifully</h2>
+    <h2>Show your work,&nbsp<br>beautifully</h2>
     <!--
     <p>Get Bryn to class up your website</a>
         <br />
@@ -30,6 +30,14 @@
     vertical-align:middle;
   }
 
+  .feature .image {
+    display: inline-block;
+    height: 100%;
+    /* overflow: hidden; */
+    position: relative;
+    width: 100;
+}
+
   @media screen and (max-width: 1680px){
 
     #main * .row > * {
@@ -41,17 +49,18 @@
 @section('content')
             <!-- Main -->
             <div id="main">
+                <header class="major container 75%" style="margin-bottom: 0px;">
+                  <h2>About BBEAU</h2>
+                  <p>Bryn is a web developer working in Vancouver, British Columbia <br><br>He has access to a community of talented young developers, to tackle your larger projects</p>
+                </header>
 
                 <header class="major container 75%" style="margin-bottom: 0px;">
-                  <h2>Bryn's Guthub Activity</h2>
+
+                  <h2>Bryn's Github Activity</h2>
                   <br>
                   <img class="img-responsive" src="http://ghchart.rshah.org/brynbeaudry" alt="Bryn's Github chart" />
                   <br>
-                    <h4>Bryn has been conducting lots of experiments recently.</h4>
-                    <!--
-                    <p>Tellus erat mauris ipsum fermentum<br />
-                    etiam vivamus nunc nibh morbi.</p>
-                    -->
+                  <h4>Bryn has been conducting working on many projects this year.</h4>
                 </header>
                 <header class="major container 75%" style="margin-bottom: 0px;">
                   <h2>Projects</h2>

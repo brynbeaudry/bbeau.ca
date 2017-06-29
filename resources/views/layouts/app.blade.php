@@ -59,10 +59,9 @@
                         @if (Auth::guest())
                             <!--<li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">LinkedIn</a></li>
-                            <li><a href="#">Resume</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="https://www.facebook.com/bryn.beaudry">Facebook</a></li>
+                            <li><a href="http://www.linkedin.com/in/brynbeau">LinkedIn</a></li>
+                            <li><a href="{{asset('/resume/ResumeForWebBB20176252017.pdf')}}">Resume</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
