@@ -23,6 +23,14 @@
     vertical-align:middle;
   }
 
+  .feature .image img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      position: absolute;
+  }
+
   h1 {
    color: black;
    -webkit-text-fill-color: white; /* Will override color (regardless of order) */

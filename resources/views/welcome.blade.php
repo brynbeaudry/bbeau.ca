@@ -30,12 +30,13 @@
     vertical-align:middle;
   }
 
-  .feature .image {
-    display: inline-block;
+.feature .image img {
+    display: block;
     height: 100%;
-    /* overflow: hidden; */
-    position: relative;
-    width: 100;
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    padding-top : 2em;
 }
 
   @media screen and (max-width: 1680px){
@@ -51,7 +52,10 @@
             <div id="main">
                 <header class="major container 75%" style="margin-bottom: 0px;">
                   <h2>About BBEAU</h2>
-                  <p>Bryn is a web developer working in Vancouver, British Columbia <br><br>He has access to a community of talented young developers, to tackle your larger projects</p>
+                  <p>Bryn is a full-stack web software developer working in Vancouver, British Columbia <br><br>He has access to a community of talented young developers, to tackle your larger projects <br>
+                    <br>Scroll and click to go deeper</p>
+
+
                 </header>
 
                 <header class="major container 75%" style="margin-bottom: 0px;">
@@ -60,29 +64,29 @@
                   <br>
                   <img class="img-responsive" src="http://ghchart.rshah.org/brynbeaudry" alt="Bryn's Github chart" />
                   <br>
-                  <h4>Bryn has been conducting working on many projects this year.</h4>
+                  <h4>Bryn has been working on many projects this year.</h4>
                 </header>
                 <header class="major container 75%" style="margin-bottom: 0px;">
                   <h2>Projects</h2>
-                  <h4>Click a project image to learn more</h4>
+                  <h4>Click to learn more</h4>
                 </header>
                 <!--alternate between feature left and feature right -->
                 @if(isset($projects) && count($projects) > 0)
                 @foreach($projects as $key => $project)
-                <div class="box alt container" style="margin-bottom: 0px;">
+                <div class="box alt container" style="">
                     @if($key%2==0)
                     <section class="feature left">
                     @else
                     <section class="feature right">
                     @endif
-                        <a href="/projects/{{$project['id']}}" class="image thumbnail"><img src="{{$project['img']}}" style="" alt="" /></a>
+                        <a href="/projects/{{$project['id']}}" class="image img-responsive img-rounded img-thumbnail"><img src="{{$project['img']}}" style="" alt="" /></a>
                         <div class="content">
                             <h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>
                             @if($project['url'] != "NULL")
-                            <h5>{{$project['url']}}</h5>
+                            <a href="/projects/{{$project['id']}}"><h5>{{$project['url']}}</h5></a>
                             @endif
-                            <p>{{substr($project['desc'], 0 ,150) . '...'}}</p>
+                            <p>{{substr($project['desc'], 0 ,150) . '...'}} <a href="/projects/{{$project['id']}}">    continue reading</a></p>
                         </div>
                     </section>
                   </div>
