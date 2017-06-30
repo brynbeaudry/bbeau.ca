@@ -124,10 +124,10 @@
                           @endif
                             <div class="wrapper">
                               <h4 class="hidden-xs">{{ $tech->name }}</h4>
-                              @if(strpos($tech->url, "http://") !== false)
+                              @if(strpos($tech->url, "http://") !== false || strpos($tech->url, "https://") !== false)
                               <a href="{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
                               @else
-                                <a href="https://{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                                <a href="://{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
                               @endif
                               <!--style="width: 200px height: 200px" -->
                             </div>
