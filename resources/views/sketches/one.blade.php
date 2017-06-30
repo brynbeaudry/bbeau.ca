@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('directive')
 <div class="head-text" style="margin-bottom : 0px;">
-    <h1 style="">{{$project['title']}}</h1>
+    <h1 style="">Sketch</h1>
     </div>
   </div>
 </div>
@@ -23,12 +23,12 @@
     vertical-align:middle;
   }
 
-  .feature .image img {
+#main > div > div > img {
       display: block;
       height: 100%;
       width: 100%;
-      object-fit: contain;
-      position: absolute;
+      margin: 0 auto;
+      position: relative;
   }
 
   h1 {
@@ -67,77 +67,15 @@
     <link href="{{asset('css/bbeau.css') }}" rel="stylesheet"/>
             <!-- Main -->
             <div id="main">
-
-                <header class="major container 75%" style="margin-bottom: 0px;">
-                    <h4>{{$project['tagline']}}</h4>
-                    @if($project['url'] != "NULL")
-                    <h5>{{$project['url']}}</h5>
-                    <h7>Click an image below to goto the site</h5>
-                    @endif
-                </header>
-                <div class="box container" style="margin-bottom: 0px;">
+                <div class="box container" style="margin-bottom: 0px; margin-top: 0px;">
                 <div class="content">
-                  <p><i>"{{$project['desc']}}"</i></p>
+                  <img src="{{$sketch['img']}}" class="img-responsive text-center" style="" alt="" />
+                  <br>
+                  <p class="text-center"><i>"{{$sketch['desc']}}"</i></p>
                 </div>
               </div>
-                <!--alternate between feature left and feature right -->
-                @if(isset($images) && count($images) > 0)
-                @foreach($images as $key => $image)
-                <div class="box alt container" style="margin-bottom : 0px;">
-                    @if($key%2==0)
-                    <section class="feature left">
-                    @else
-                    <section class="feature right">
-                    @endif
-                    @if($project['url'] != "NULL")
-                      <a href="{{$project['url']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
-                    @else
-                      <a href="" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
-                    @endif
-                        <div class="content">
-                            <!--<h3>{{$project['title']}}</h3>
-                            <h4><small>{{$project['tagline']}}</small></h5>
-                            @if($project['url'] != "NULL")
-                            <h5>{{$project['url']}}</h5>
-                            @endif -->
-                            <p>{{$image['desc']}}</p>
-                        </div>
-                    </section>
-                  </div>
-                  @endforeach
-                  @endif
-                  <!--Technologies for the project -->
-                  <div class="box container" style="margin-bottom : 0px;">
-                    <header>
-                      <h2>Technologies used</h2>
-                      <h4><small>For this project</small></h4>
-          					</header>
-                    <section>
-                      <p class="text-center">Click an image to learn more</p>
-                    </section>
-                    <section>
 
-                        <div class="row">
-                          @if(isset($technologies) && count($technologies) > 0)
-                          @foreach($technologies as $key => $tech)
-                          <!--<p> LHS {{ (1+$key) * 3}}  >  RHS {{ (int)(count($technologies)*3/12)*12 }}   OFFSET {{count($technologies)*3%12/2}} </p>-->
-                          @if( (1+$key) * 3 > (int)(count($technologies)*3/12)*12 )
-                          <div class="col-md-3 col-md-push-{{count($technologies)*3%12/2}} col-xs-12">
-                          @else
-                          <div class="col-md-3 col-xs-12">
-                          @endif
-                            <div class="wrapper">
-                              <h4 class="hidden-xs">{{ $tech->name }}</h4>
-                              <a href="{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
-                              <!--style="width: 200px height: 200px" -->
-                            </div>
-                          </div>
-                          @endforeach
-                          @endif
-                        </div>
 
-                    </section>
-                  </div>
 
 
             <!--

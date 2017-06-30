@@ -62,6 +62,8 @@
                             <li><a href="https://www.facebook.com/bryn.beaudry">Facebook</a></li>
                             <li><a href="http://www.linkedin.com/in/brynbeau">LinkedIn</a></li>
                             <li><a href="{{asset('/resume/ResumeForWebBB20176252017.pdf')}}">Resume</a></li>
+                            <li><a href="{{route('sketches.index')}}">Sketches</a></li>
+                            <li><a href="{{route('welcome')}}">Projects</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

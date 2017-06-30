@@ -17,4 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-ROute::resource('projects', 'ProjectController');
+Route::resource('projects', 'ProjectController');
+Route::get('/projects/image/{id}', 'ProjectController@showImage')->name('project.image');
+
+Route::resource('sketches', 'SketchController');

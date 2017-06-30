@@ -3,7 +3,7 @@
 <div class="head-text">
     <img class="img-responsive main-logo-img" src="{{asset('images/main-logo.gif')}}" />
     <h1>Welcome to BBEAU.CA</h1>
-    <h2>Show your work,&nbsp<br>beautifully</h2>
+    <h2>Show your work,&nbsp<br>beautifully.</h2>
     <!--
     <p>Get Bryn to class up your website</a>
         <br />
@@ -52,8 +52,8 @@
             <div id="main">
                 <header class="major container 75%" style="margin-bottom: 0px;">
                   <h2>About BBEAU</h2>
-                  <p>Bryn is a full-stack web software developer working in Vancouver, British Columbia <br><br>He has access to a community of talented young developers, to tackle your larger projects <br>
-                    <br>Scroll and click to go deeper</p>
+                  <p>Bryn is a full-stack web software developer working in Vancouver, British Columbia. <br><br>He has access to a community of talented young developers, to tackle your larger projects. <br>
+                    <br>Scroll and click to go deeper.</p>
 
 
                 </header>
@@ -79,7 +79,7 @@
                     @else
                     <section class="feature right">
                     @endif
-                        <a href="/projects/{{$project['id']}}" class="image img-responsive img-rounded img-thumbnail"><img src="{{$project['img']}}" style="" alt="" /></a>
+                        <a href="/projects/{{$project['id']}}" class="image img-responsive img-rounded"><img src="{{$project['img']}}" style="" alt="" /></a>
                         <div class="content">
                             <h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>
@@ -113,7 +113,11 @@
                           @endif
                             <div class="wrapper">
                               <h4 class="hidden-xs">{{ $tech['name'] }}</h4>
+                              @if(strpos($tech['url'], "http://") !== false)
                               <a href="{{$tech['url']}}"><img src="{{$tech['img']}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                              @else
+                                <a href="http://{{$tech['url']}}"><img src="{{$tech['img']}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                              @endif
                               <!--style="width: 200px height: 200px" -->
                             </div>
                           </div>

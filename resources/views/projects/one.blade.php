@@ -72,8 +72,8 @@
                     <h4>{{$project['tagline']}}</h4>
                     @if($project['url'] != "NULL")
                     <h5>{{$project['url']}}</h5>
-                    <h7>Click an image below to goto the site</h5>
                     @endif
+                    <h7>Click an image below to enlarge</h5>
                 </header>
                 <div class="box container" style="margin-bottom: 0px;">
                 <div class="content">
@@ -89,11 +89,7 @@
                     @else
                     <section class="feature right">
                     @endif
-                    @if($project['url'] != "NULL")
-                      <a href="{{$project['url']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
-                    @else
-                      <a href="" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
-                    @endif
+                      <a href="/projects/image/{{$image['id']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
                         <div class="content">
                             <!--<h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>
@@ -128,7 +124,11 @@
                           @endif
                             <div class="wrapper">
                               <h4 class="hidden-xs">{{ $tech->name }}</h4>
+                              @if(strpos($tech->url, "http://") !== false)
                               <a href="{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                              @else
+                                <a href="https://{{$tech->url}}"><img src="{{$tech->img}}" style="width: 150px; height: 150px;"  class="" alt=""></a>
+                              @endif
                               <!--style="width: 200px height: 200px" -->
                             </div>
                           </div>

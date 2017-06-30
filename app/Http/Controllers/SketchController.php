@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Project;
-use App\ProjectImage;
 use Illuminate\Http\Request;
+use App\Sketch;
 
-class ProjectController extends Controller
+class SketchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,6 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         //
+        $sketches = Sketch::all();
+        return view('sketches.all', ['sketches'=> $sketches]);
     }
 
     /**
@@ -42,56 +43,37 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $project = Project::findOrFail($id);
-        $images = $project->images();
-        $technologies = $project->technologies();
-        shuffle($technologies);
-
-        //
-        //dd($images);
-        return view('projects.one', ['project' => $project, 'images'=> $images, 'technologies'=> $technologies]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function showImage($id)
-    {
-        $projectImage = ProjectImage::find($id);
-        $project = Project::find($projectImage->project_id);
-        $images = $project->images();
-        $technologies = $project->technologies();
-        shuffle($technologies);
-        //dd();
-        return view('projects.image', ['project' => $project, 'image'=> $projectImage]);
+        $sketch = Sketch::find($id);
+        if($sketch)
+          return view('sketches.one', ['sketch'=> $sketch]);
+        else
+          return view('welcome');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit($id)
     {
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -99,10 +81,10 @@ class ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Project  $project
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
         //
     }

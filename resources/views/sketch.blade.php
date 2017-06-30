@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('directive')
 <div class="head-text" style="margin-bottom : 0px;">
-    <h1 style="">{{$project['title']}}</h1>
+    <h1 style="">{{$title}}</h1>
     </div>
   </div>
 </div>
@@ -90,7 +90,7 @@
                     <section class="feature right">
                     @endif
                     @if($project['url'] != "NULL")
-                      <a href="{{$project['url']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
+                      <a href="{{$project['url']}}" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
                     @else
                       <a href="" class="image icon thumbnail"><img src="{{$image['img']}}" style="" alt="" /></a>
                     @endif
