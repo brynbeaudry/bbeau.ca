@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/welcome', 'WelcomeController@index');
 
 Auth::routes();
 

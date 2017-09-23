@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Technology;
 use App\ProjectImage;
+use League\Flysystem\Exception;
 
 
 class WelcomeController extends Controller

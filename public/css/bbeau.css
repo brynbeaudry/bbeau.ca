@@ -4,8 +4,12 @@
     -moz-backface-visibility: hidden;
 }
 
-#app-navbar-collapse > ul.nav.navbar-nav.navbar-right a{
-    color : black;
+#main-name{
+  color: white !important;
+}
+
+a.bnav-link{
+  color: white !important;
 }
 
 div.head-text{
@@ -30,5 +34,5 @@ div.head-text{
 }
 
 #header > nav {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.7);
 }

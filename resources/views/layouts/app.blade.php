@@ -28,7 +28,7 @@
 <body>
     <div id="app">
         <div id="header">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -42,7 +42,7 @@
 
                     <!-- Branding Image -->
                     <a href="{{ url('/') }}"><img class="nav-bar-icon navbar-brand" src="{{asset('images/xs_icon.gif')}}"/></a>
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a id="main-name" class="navbar-brand" href="{{ url('/') }}">
                         Bryn Beaudry
                     </a>
                 </div>
@@ -59,11 +59,11 @@
                         @if (Auth::guest())
                             <!--<li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li> -->
-                            <li><a href="https://www.facebook.com/bryn.beaudry">Facebook</a></li>
-                            <li><a href="http://www.linkedin.com/in/brynbeau">LinkedIn</a></li>
-                            <li><a href="{{asset('/resume/ResumeForWebBB20176252017.pdf')}}">Resume</a></li>
-                            <li><a href="{{route('sketches.index')}}">Sketches</a></li>
-                            <li><a href="{{route('welcome')}}">Projects</a></li>
+                            <li><a class="bnav-link" href="https://www.facebook.com/bryn.beaudry">Facebook</a></li>
+                            <li><a class="bnav-link" href="http://www.linkedin.com/in/brynbeau">LinkedIn</a></li>
+                            <li><a class="bnav-link" href="{{asset('/resume/ResumeForWebBB201709.pdf')}}">Resume</a></li>
+                            <li><a class="bnav-link" href="{{route('sketches.index')}}">Sketches</a></li>
+                            <li><a class="bnav-link" href="{{route('welcome')}}">Projects</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

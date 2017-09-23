@@ -52,8 +52,8 @@
             <div id="main">
                 <header class="major container 75%" style="margin-bottom: 0px;">
                   <h2>About BBEAU</h2>
-                  <p>Bryn is a full-stack web software developer working in Vancouver, British Columbia. <br><br>He has access to a community of talented young developers, to tackle your larger projects. <br>
-                    <br>Scroll and click to go deeper.</p>
+                  <p>Bryn is a full-stack web software developer working in Vancouver, British Columbia.
+                  <br>Scroll and click to go deeper.</p>
 
 
                 </header>
@@ -79,7 +79,7 @@
                     @else
                     <section class="feature right">
                     @endif
-                        <a href="/projects/{{$project['id']}}" class="image img-responsive img-rounded"><img src="{{$project['img']}}" style="" alt="" /></a>
+                        <a href="projects/{{$project['id']}}" class="image img-responsive img-rounded"><img src="{{$project['img']}}" style="" alt="" /></a>
                         <div class="content">
                             <h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>

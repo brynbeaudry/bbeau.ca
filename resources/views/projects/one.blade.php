@@ -89,8 +89,12 @@
                     @else
                     <section class="feature right">
                     @endif
-                      <a href="/projects/image/{{$image['id']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
-                        <div class="content">
+                        @if($project['url'] != "NULL")
+                            <a href="{{$project['url']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
+                        @else
+                            <a href="projects/image/{{$img['id']}}" class="image img-responsive img-rounded"><img src="{{$image['img']}}" style="" alt="" /></a>
+                        @endif
+                            <div class="content">
                             <!--<h3>{{$project['title']}}</h3>
                             <h4><small>{{$project['tagline']}}</small></h5>
                             @if($project['url'] != "NULL")
