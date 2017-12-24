@@ -19,6 +19,7 @@ class WelcomeController extends Controller
     public function index()
     {
         //
+        //echo "<h1>Hello!</h1>";
         $projects = Project::all();
         //dd($projects);
         /*

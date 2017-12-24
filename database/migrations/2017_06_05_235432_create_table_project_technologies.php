@@ -13,7 +13,7 @@ class CreateTableProjectTechnologies extends Migration
      */
     public function up()
     {
-        Schema::create('project_technologies', function (Blueprint $table) {
+        Schema::create('project_technology', function (Blueprint $table) {
             $table->integer('technology_id')->unsigned();
             $table->foreign('technology_id')
             ->references('id')->on('technologies')
